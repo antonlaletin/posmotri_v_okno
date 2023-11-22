@@ -124,7 +124,7 @@ ol {
   align-items: center;
 }
 
-.search-form__label:has(.search-form__checkbox):hover  {
+.search-form__label:has(.search-form__checkbox):hover {
   text-decoration: underline;
 }
 
