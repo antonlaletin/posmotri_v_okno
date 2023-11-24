@@ -36,7 +36,9 @@ ul,
 ol {
   list-style: none;
 }
-
+ body {
+  overflow: hidden;
+}
 .content {
   display: flex;
   align-items: flex-end;
@@ -49,21 +51,23 @@ ol {
 }
 
 .content__list {
-  margin-top: 26px;
+  margin-top: 20px;
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
 }
 
-.content__list:not(:first-child):not(:last-child) {
-  gap: 30px;
+.content__list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  background: transparent;
 }
 
 .result__video-container {
   width: 711px;
   height: 386px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   position: relative;
 }
 
@@ -83,13 +87,9 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card:hover {
-  text-decoration: underline;
-}
-
 .content__video-card-thumbnail {
-  max-width: 194px;
   height: 103px;
+  min-width: 194px;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
@@ -113,7 +113,7 @@ ol {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-size: 18px;
 }
 
@@ -122,6 +122,7 @@ ol {
   cursor: pointer;
   width: fit-content;
   align-items: center;
+  margin-top: 5px;
 }
 
 .search-form__label:has(.search-form__checkbox):hover {
@@ -144,14 +145,14 @@ ol {
   cursor: text;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: inherit;
   font-weight: 400;
   font-style: normal;
   line-height: normal;
   min-width: 226px;
-  padding: 4px 0;
+  line-height: 23px;
 }
 
 .search-form__textfield:focus {
@@ -172,6 +173,7 @@ ol {
   height: 19px;
   border: 1px solid #fff;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -195,7 +197,7 @@ ol {
   line-height: normal;
   cursor: pointer;
   align-self: flex-end;
-  padding: 9px 0;
+  padding: 6px 0;
 }
 
 .button:focus {
@@ -247,10 +249,6 @@ ol {
   margin: 2px;
 }
 
-.content__card-link:active {
-  text-decoration: none;
-}
-
 .content__card-link_current {
   background: #545050;
 }
@@ -268,7 +266,7 @@ ol {
 }
 
 .content__card-link:focus-visible {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 
 .content__video-card-title {
@@ -278,7 +276,6 @@ ol {
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -305,9 +302,3 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-.block {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-} 
