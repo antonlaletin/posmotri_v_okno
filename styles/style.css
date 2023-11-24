@@ -36,9 +36,7 @@ ul,
 ol {
   list-style: none;
 }
- body {
-  overflow: hidden;
-}
+
 .content {
   display: flex;
   align-items: flex-end;
@@ -46,8 +44,10 @@ ol {
   width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 52px;
-  margin-bottom: auto;
+  transform: translate(-50%, -50%);
+  position: relative; 
+  top: 50%; 
+  left: 50%;
 }
 
 .content__list {
@@ -58,10 +58,21 @@ ol {
 }
 
 .content__list::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-  background: transparent;
+  cursor:grab;
+  width: 20px;
+  background-color: transparent;
+}
+
+.content__list::-webkit-scrollbar {
+ cursor:grab;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  cursor:grab;
+  background-color: rgb(0 0 0 / 50%);
+  border-radius: 10px;
+  border: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
 }
 
 .result__video-container {
@@ -89,7 +100,7 @@ ol {
 
 .content__video-card-thumbnail {
   height: 103px;
-  min-width: 194px;
+  width: 194px;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
